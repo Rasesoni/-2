@@ -20,12 +20,12 @@ int main(){
             delitel=i;// 2
             while(a%i==0){// 132/2 66/2
                 a=a/i;// a=66      a=33
-                count++ //count =1
+                count++; //count =1
             }
             break;
         }
     }
     cout << "Наименьший делитель"<< delitel << endl;
-    cout << "Наибольший делитель"<< delitel << endl;
+    cout << "Кратность делитель"<< count << endl;
     return 0;
 }
