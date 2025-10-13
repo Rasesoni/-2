@@ -1,0 +1,31 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+bool is_prime(int x){
+    for(int i=2;i<=sqrt(x);i++){
+        if (x%i==0){
+            return false;
+        }
+    }
+    return true;
+}
+int main(){
+    setlocale(LC_ALL,"Russian");
+    unsigned int a;
+    int delitel=0;
+    int count=0;
+    cin >> a;
+    for(int i=2;i<=sqrt(a);i++){
+        if (a%i==0){ // 132/2!
+            delitel=i;// 2
+            while(a%i==0){// 132/2 66/2
+                a=a/i;// a=66      a=33
+                count++ //count =1
+            }
+            break;
+        }
+    }
+    cout << "Наименьший делитель"<< delitel << endl;
+    cout << "Наибольший делитель"<< delitel << endl;
+    return 0;
+}
