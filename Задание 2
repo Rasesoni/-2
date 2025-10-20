@@ -1,0 +1,33 @@
+#include<iostream>
+#include<vector>
+#include<cmath>
+using namespace std;
+vector<int> sieveEratothen(int limit){
+    if (limit<2) return {};
+    // Отметить число составное или нет
+    // mared[x]==true - значит число составное - не простое
+    vector<bool> marked(limit + 1,false);
+    vector <int> primes;
+    int upper=static_cast<int>(sqrt(limit));
+    for(int p=2;p<upper;++p){
+        while(limit%p==0){
+            primes.push_back(p);
+            limit/=p;
+        }
+    }
+    if (limit!=1){
+        primes.push_back(limit);
+    }
+    return primes;
+}
+
+int main(){
+    int limit;
+    if (!(cin >> limit)){
+        return 1;
+    }
+    vector<int> primes=sieveEratothen(limit);
+    for(int elem: primes) cout << elem << ' ';
+    
+    return 0;
+}
