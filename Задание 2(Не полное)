@@ -29,3 +29,16 @@ int main(){
     cout << "Кратность делитель"<< count << endl;
     return 0;
 }
+(Работа с библиотекой vector)
+#include<iostream>
+#include<vector>
+using namespace std;
+int main(){
+    vector<int> vec;
+    // push_back(i) - добавление
+    // pop_back() - удаление
+    for(int i = 0;i<3;i++){
+        vec.push_back(i);
+        cout << vec[i]<< " " ;
+    }
+}
